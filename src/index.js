@@ -5,17 +5,27 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 class App extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      latitude: null,
-      longitude: null,
-      estacao: null,
-      data: null,
-      icone: null,
-      mensagemDeErro: null
-    }
-    console.log('construtor')
+  // constructor(props){
+  //   super(props)
+  //   this.state = {
+  //     latitude: null,
+  //     longitude: null,
+  //     estacao: null,
+  //     data: null,
+  //     icone: null,
+  //     mensagemDeErro: null
+  //   }
+  //   console.log('construtor')
+  // }
+
+  //inicializar o estado sem usar o construtor
+  state = {
+    latitude: null,
+    longitude: null,
+    estacao: null,
+    data: null,
+    icone: null,
+    mensagemDeErro: null
   }
 
   componentDidMount(){
