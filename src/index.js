@@ -19,7 +19,7 @@ class App extends React.Component{
   }
 
   componentDidMount(){
-    console.log('componentDidMount')
+    this.obterLocalizacao()
   }
 
   componentDidUpdate(){
@@ -44,9 +44,9 @@ class App extends React.Component{
       return sul ? 'Inverno' : "Verão"
     if (data >= d2 && data < d3)
       return sul ? 'Primavera' : 'Outono'
-    if (data >= d3 && data < d4)
-      return sul ? 'Verão' : 'Inverno'
-    return sul ? 'Outono' : 'Primavera'
+    if (data >= d4 && data < d1)
+      return sul ? 'Outono' : 'Primavera'
+    return sul ? 'Verão' : 'Inverno'
     
   }
   icones = {
