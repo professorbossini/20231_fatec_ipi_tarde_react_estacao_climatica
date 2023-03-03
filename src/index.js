@@ -15,6 +15,19 @@ class App extends React.Component{
       icone: null,
       mensagemDeErro: null
     }
+    console.log('construtor')
+  }
+
+  componentDidMount(){
+    console.log('componentDidMount')
+  }
+
+  componentDidUpdate(){
+    console.log("componentDidUpdate")
+  }
+
+  componentWillUnmount(){
+    console.log("componentWillUnmount")
   }
   obterEstacao = (data, latitude) => {
     const anoAtual = data.getFullYear()
@@ -64,6 +77,7 @@ class App extends React.Component{
     ) 
   }
   render(){
+    console.log('render')
     return <div className="container mt-2">
       <div className="row justify-content-center">
         <div className="col-12 col-md-8">
@@ -93,6 +107,11 @@ class App extends React.Component{
                 className="btn btn-outline-primary w-100 mt-2"
                 onClick={this.obterLocalizacao}>
                 Qual a minha estação?
+              </button>
+              <button 
+                className="btn btn-outline-danger w-100 mt-2"
+                onClick={() => ReactDOM.unmountComponentAtNode(document.querySelector('#root'))}>
+                Desmontar
               </button>
             </div>
           </div>
