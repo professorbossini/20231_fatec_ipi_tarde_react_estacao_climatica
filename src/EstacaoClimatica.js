@@ -9,18 +9,18 @@ export class EstacaoClimatica extends Component {
           <div 
             className="d-flex align-items-center border rounded mb-2"
             style={{height: '6rem'}}>
-              <i className={`fas fa-5x ${this.state.icone}`}></i>
-              <p className="w-75 ms-3 text-center fs-1">{this.state.estacao}</p>
+              <i className={`fas fa-5x ${this.props.icone}`}></i>
+              <p className="w-75 ms-3 text-center fs-1">{this.props.estacao}</p>
           </div>
           <div>
             <p className="text-center">
               {/* renderização condicional */}
               {
-                this.state.latitude ?
-                  `Coordenadas: ${this.state.latitude}, ${this.state.longitude}. Data: ${this.state.data}`
+                this.props.latitude ?
+                  `Coordenadas: ${this.props.latitude}, ${this.props.longitude}. Data: ${this.props.data}`
                 :
-                this.state.mensagemDeErro ?
-                `${this.state.mensagemDeErro}`
+                this.props.mensagemDeErro ?
+                `${this.props.mensagemDeErro}`
                 :
                 `Clique no botão para saber a sua estação climática`  
               }
@@ -28,7 +28,7 @@ export class EstacaoClimatica extends Component {
           </div>
           <button 
             className="btn btn-outline-primary w-100 mt-2"
-            onClick={this.obterLocalizacao}>
+            onClick={this.props.obterLocalizacao}>
             Qual a minha estação?
           </button>
         </div>
