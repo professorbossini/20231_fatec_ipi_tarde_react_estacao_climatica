@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
 
 export class EstacaoClimatica extends Component {
+
+  timer = null
+
+  state = {
+    data: null
+  }
+
+  componentDidMount(){
+    this.timer = setInterval(() => {
+      console.log("timer executando...")
+      this.setState({data: new Date().toLocaleTimeString()})
+    }, 1000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timer)
+  }
+
+
   render() {
     return (
       <div className="card">
@@ -17,7 +36,7 @@ export class EstacaoClimatica extends Component {
               {/* renderização condicional */}
               {
                 this.props.latitude ?
-                  `Coordenadas: ${this.props.latitude}, ${this.props.longitude}. Data: ${this.props.data}`
+                  `Coordenadas: ${this.props.latitude}, ${this.props.longitude}. Data: ${this.state.data}`
                 :
                 this.props.mensagemDeErro ?
                 `${this.props.mensagemDeErro}`
