@@ -95,7 +95,8 @@ class App extends React.Component{
         <div className="col-12 col-md-8">
           {
             !this.state.latitude && !this.state.mensagemDeErro ?
-              <Loading />
+              <Loading 
+                mensagem="Por favor, responda à solicitação de localização"/>
             :
             this.state.mensagemDeErro ?
               // p.border.rounded.p-2.fs-1.text-center{É preciso dar permissão para acesso à localização. Atualize a página e tente de novo, ajustando a configuração do seu navegador.}
